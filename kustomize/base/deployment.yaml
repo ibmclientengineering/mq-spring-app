@@ -6,7 +6,7 @@ metadata:
   name: mq-spring-app
   annotations:
     app.openshift.io/vcs-ref: 9363c7d02f9f98c4715b254a9ae8d5b6e1df5241
-    app.openshift.io/vcs-uri: https://github.com/GitOps-MQ-12042022/mq-spring-app
+    app.openshift.io/vcs-uri: https://github.com/ibmclientengineering/mq-spring-app
   labels:
     app.kubernetes.io/name: mq-spring-app
     helm.sh/chart: mq-spring-app-1.0.0-rc0.0.2

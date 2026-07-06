@@ -19,6 +19,8 @@
 
 Sample MQ Client Java Spring Boot application. It contains no default application code, but comes with standard best practices, including a health check and application metric monitoring.
 
+> Maintained by **IBM Client Engineering**. Adapted from the [Cloud Native Toolkit](https://cloud-native-toolkit.github.io/) reference implementation and used to demonstrate an MQ client on Cloud Pak for Integration.
+
 Note: This is an open source project. This is supporting the tutorial available at https://operate.cloudnativetoolkit.dev/.
  
 

@@ -21,7 +21,7 @@ spec:
           - start
           - ibm-test-pipeline-for-dev-env
           - --param
-          - git-url="https://github.com/cloud-native-toolkit/mq-spring-app.git"
+          - git-url="https://github.com/ibmclientengineering/mq-spring-app.git"
           - --param
           - git-revision="master"
           - --param
