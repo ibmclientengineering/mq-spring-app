@@ -1,8 +1,8 @@
 # multistage Dockerfile
-# first stage does the maven build
-# second stage creates the runtime image
-###  stage 1 ###
-FROM adoptopenjdk/maven-openjdk11 as builder
+# stage 1 builds the Spring Boot app with Maven; stage 2 is a minimal runtime image.
+# Modernized 2026-07: AdoptOpenJDK (archived -> Eclipse Temurin) and UBI 8.4 -> UBI 9.
+### stage 1: build ###
+FROM maven:3.9-eclipse-temurin-11 AS builder
 
 WORKDIR /workspace/app
 
@@ -13,12 +13,10 @@ COPY src src
 
 RUN mvn package -DskipTests
 
-### stage 2  ###
+### stage 2: runtime ###
+FROM registry.access.redhat.com/ubi9/ubi-minimal:latest
 
-
-FROM registry.access.redhat.com/ubi8/ubi:8.4
-
-RUN dnf install -y java-11-openjdk.x86_64
+RUN microdnf install -y java-11-openjdk-headless && microdnf clean all
 
 COPY --from=builder /workspace/app/target/*.jar ./app.jar
 
