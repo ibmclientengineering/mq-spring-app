@@ -2,7 +2,7 @@
 # stage 1 builds the Spring Boot app with Maven; stage 2 is a minimal runtime image.
 # Modernized 2026-07: AdoptOpenJDK (archived -> Eclipse Temurin) and UBI 8.4 -> UBI 9.
 ### stage 1: build ###
-FROM maven:3.9-eclipse-temurin-11 AS builder
+FROM docker.io/library/maven:3.9-eclipse-temurin-11 AS builder
 
 WORKDIR /workspace/app
 
